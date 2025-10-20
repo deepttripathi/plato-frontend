@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind variants;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 35 5.9% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 35 5.9% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 35 5.9% 10%;
+
+    --primary: 212 80% 44%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 220 13% 14%;
+    --secondary-foreground: 0 0% 98%;
+
+    --accent: 219 35% 80%;
+    --accent-foreground: 35 5.9% 10%;
+
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 212 80% 44%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 35 5.9% 10%;
+    --foreground: 0 0% 98%;
+
+    --card: 35 5.9% 10%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 35 5.9% 10%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 212 80% 44%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 220 13% 14%;
+    --secondary-foreground: 0 0% 98%;
+
+    --accent: 219 35% 80%;
+    --accent-foreground: 35 5.9% 10%;
+
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 212 80% 44%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 0 0% 98%;
+    --sidebar-primary-foreground: 240 5.9% 10%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .container {
+    @apply w-full max-w-full px-4 md:px-6;
+  }
+}
+
+/* Custom styles for the sidebar rail */
+[data-sidebar="rail"] {
+  @apply after:bg-primary/20 hover:after:bg-primary/40;
+  @apply cursor-pointer;
+}
+
+/* Make the rail more visible */
+[data-sidebar="rail"]::after {
+  @apply opacity-100;
+}
